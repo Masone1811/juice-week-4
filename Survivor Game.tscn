@@ -3,6 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://baohm58wb38si" path="res://player.tscn" id="1_jkuhc"]
 [ext_resource type="Script" uid="uid://oj7hj4kgw31t" path="res://survivor_game.gd" id="1_ony8i"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_ony8i"]
+[ext_resource type="AudioStream" uid="uid://b06ukt2ywlh4h" path="res://sounds/Level Up.mp3" id="4_nyt22"]
+[ext_resource type="AudioStream" uid="uid://qi5w0hc8oasl" path="res://sounds/mob_death_sound.wav" id="5_ai143"]
+[ext_resource type="AudioStream" uid="uid://d387rhqmcy3ol" path="res://sounds/Transition.mp3" id="6_aeywb"]
+[ext_resource type="AudioStream" uid="uid://cj743cuux8whd" path="res://sounds/LoopWIP1.ogg" id="7_7inyp"]
+[ext_resource type="AudioStream" uid="uid://c11qkw82qjwg" path="res://sounds/game_over.wav" id="8_vwi0n"]
 
 [sub_resource type="Curve2D" id="Curve2D_nyt22"]
 _data = {
@@ -276,6 +281,32 @@ position = Vector2(637, 154)
 
 [node name="PineTree18" parent="." unique_id=1149868711 instance=ExtResource("2_ony8i")]
 position = Vector2(188, 424)
+
+[node name="LevelUpSound" type="AudioStreamPlayer2D" parent="." unique_id=1667139912]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("4_nyt22")
+
+[node name="MobDeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1428629500]
+unique_name_in_owner = true
+stream = ExtResource("5_ai143")
+
+[node name="RoundSound" type="AudioStreamPlayer2D" parent="." unique_id=1729264996]
+unique_name_in_owner = true
+stream = ExtResource("6_aeywb")
+
+[node name="GameMusic" type="AudioStreamPlayer2D" parent="." unique_id=750135046]
+unique_name_in_owner = true
+process_mode = 1
+stream = ExtResource("7_7inyp")
+autoplay = true
+playback_type = 1
+parameters/looping = true
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="." unique_id=97376618]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("8_vwi0n")
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="pressed" from="UILayer/LevelUpPanel/DamageButton" to="." method="_on_damage_button_pressed"]
