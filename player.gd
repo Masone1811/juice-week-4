@@ -31,6 +31,7 @@ func _physics_process(delta):
 		%HealthBar.value = health
 		if %HurtTimer.is_stopped():
 			%HappyBoo.play_hurt_animation()
+			%Camera2D.BeginSway()
 			%HurtTimer.start()
 		
 		if not %DamageTakenSound.playing:

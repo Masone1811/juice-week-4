@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://baohm58wb38si" path="res://player.tscn" id="1_jkuhc"]
 [ext_resource type="Script" uid="uid://oj7hj4kgw31t" path="res://survivor_game.gd" id="1_ony8i"]
+[ext_resource type="Script" uid="uid://w3ltlcj7wdop" path="res://camera_2d.gd" id="2_e0ho8"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_ony8i"]
 [ext_resource type="AudioStream" uid="uid://b06ukt2ywlh4h" path="res://sounds/Level Up.mp3" id="4_nyt22"]
 [ext_resource type="AudioStream" uid="uid://qi5w0hc8oasl" path="res://sounds/mob_death_sound.wav" id="5_ai143"]
@@ -38,7 +39,9 @@ metadata/_edit_vertical_guides_ = [960.0]
 metadata/_edit_horizontal_guides_ = [568.0, -200.0]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=576333443]
-offset = Vector2(960, 540)
+unique_name_in_owner = true
+position = Vector2(960, 540)
+script = ExtResource("2_e0ho8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1500965773]
 layer = -1
