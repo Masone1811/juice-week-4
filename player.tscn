@@ -68,3 +68,7 @@ show_percentage = false
 [node name="DamageTakenSound" type="AudioStreamPlayer2D" parent="." unique_id=1164108174]
 unique_name_in_owner = true
 stream = ExtResource("5_sweqy")
+
+[node name="HurtTimer" type="Timer" parent="." unique_id=2132066263]
+unique_name_in_owner = true
+one_shot = true

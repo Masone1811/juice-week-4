@@ -23,12 +23,15 @@ func _physics_process(delta):
 		%HappyBoo.play_walk_animation()
 	else:
 		%HappyBoo.play_idle_animation()
-	
+
 	const DAMAGE_RATE = 5.0
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
 		health -= damage_rate * overlapping_mobs.size() * delta
 		%HealthBar.value = health
+		if %HurtTimer.is_stopped():
+			%HappyBoo.play_hurt_animation()
+			%HurtTimer.start()
 		
 		if not %DamageTakenSound.playing:
 			%DamageTakenSound.play()
